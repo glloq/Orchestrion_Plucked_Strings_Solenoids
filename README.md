@@ -17,6 +17,7 @@ il faut placer des systemes de doigts entre les frettes qui viendrons tirer la c
 il faudra absolument penser a utiliser des systeme pour amortir les deplacement ON/OFF de chaque solenoide pour limiter les bruits mecanique  
 <img src="https://github.com/glloq/OneStringGuitar/blob/main/img/fingers%20solenoides.png" alt="Your image title" width=80% height=80%/>
 
+
 ### grattage 
 la technique choisie est d'utiliser deux solenoides opposé l'un a l'autre et d'alterner l'activation des deux solenoides pour gratter la corde.   
 <img src="https://github.com/glloq/OneStringGuitar/blob/main/img/grattage%202%20solenoides.png" alt="grattage 2 solenoides" width=80% height=80%/>  
