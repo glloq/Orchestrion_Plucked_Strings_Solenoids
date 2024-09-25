@@ -1,2 +1,38 @@
 # Orchestrion_Plucked_Strings_Solenoids
-a versatile Arduino-based system designed to control acoustic plucked instruments with solenoids utilizing MIDI messages
+
+Le projet permet de controller un instrument à corded grattée (guitare, basse, ukulele, etc ...) en utilisant des solenoides pour actionner les frettes et gratter les cordes.
+le code se veut adaptable pour touts les cas d'utilisations il suffira d'adapter les paramettres du fichier settings.h.
+
+### accords
+il faut placer des systemes de doigts entre les frettes qui viendrons tirer la corde vers le manche et faire l'accord voulu. 
+il faudra absolument penser a utiliser des systeme pour amortir les deplacement ON/OFF de chaque solenoide pour limiter les bruits mecanique  
+<img src="https://github.com/glloq/OneStringGuitar/blob/main/img/fingers%20solenoides.png" alt="Your image title" width=80% height=80%/>
+
+### grattage 
+la technique choisie est d'utiliser deux solenoides opposé l'un a l'autre et d'alterner l'activation des deux solenoides pour gratter la corde.   
+<img src="https://github.com/glloq/OneStringGuitar/blob/main/img/grattage%202%20solenoides.png" alt="grattage 2 solenoides" width=80% height=80%/>  
+une fois le solenoide de grattage desactivé le pick vient contre la corde pour etouffer la note.
+
+
+## configuration de l'instrument 
+
+le code permet de s'adapter a tout les cas d'utilisations, il suffit d'indiquer le nombre de cordes de l'instrument, le nombre de mcp utilisé et aussi le temps maximum actif d'un solenoide (afin de limiter la chauffe) 
+```
+#define NUM_STRINGS 4         // Nombre de cordes
+#define MCP_NUMBER_USED 5      // Nombre de MCP23017 à initialiser
+#define TIME_ACTIVE_MAX 5000   // Temps actif maximum en millisecondes
+
+```
+
+la definition de chaque corde est faite dans le tableau de cordes stringConfigs[NUM_STRINGS]
+il suffira d'ajouter le meme nombre de lignes que de nombre de corde  avec les differentes informations de chaque corde
+```
+struct StringConfig {
+  uint8_t midiNote;          // Numéro MIDI de la corde à vide
+  uint8_t numFrets;          // Nombre de frettes utilisées sur la corde
+  uint8_t firstFretPin;      // Pin PCA de la première frette
+  uint8_t pluckSolenoid1Pin; // Pin pour le premier solénoïde de grattage
+  uint8_t pluckSolenoid2Pin; // Pin pour le deuxième solénoïde de grattage
+};
+```
+
