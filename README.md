@@ -1,9 +1,12 @@
 # Orchestrion_Plucked_Strings_Solenoids
 
-Le projet permet de controller un instrument à corded grattée (guitare, basse, ukulele, etc ...) en utilisant des solenoides pour actionner les frettes et gratter les cordes.
-le code se veut adaptable pour touts les cas d'utilisations il suffira d'adapter les paramettres du fichier settings.h.
+> [!IMPORTANT]
+> le code compile et devrais fonctionner mais rien n'est testé !
 
-### accords
+Le projet permet de controller un instrument à corded grattée (guitare, basse, ukulele, etc ...) en utilisant des solenoides pour actionner les frettes et gratter les cordes.
+le code se veut adaptable pour touts les cas d'utilisations il suffira d'adapter les paramettres du fichier settings.h en fonction du branchement choisis.
+
+### les accords
 il faut placer des systemes de doigts entre les frettes qui viendrons tirer la corde vers le manche et faire l'accord voulu. 
 il faudra absolument penser a utiliser des systeme pour amortir les deplacement ON/OFF de chaque solenoide pour limiter les bruits mecanique  
 <img src="https://github.com/glloq/OneStringGuitar/blob/main/img/fingers%20solenoides.png" alt="Your image title" width=80% height=80%/>
