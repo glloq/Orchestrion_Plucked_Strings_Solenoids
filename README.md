@@ -11,6 +11,13 @@ le code de ce projet est contruit autour de carte pcm23017 controlé via i2c, la
 
 <img src="https://github.com/glloq/Orchestrion_Plucked_Strings_Solenoids/blob/main/schemas.png" alt="grattage 2 solenoides" width=80% height=80%/>  
 
+## gerer la chaleur
+il faut absolument gerer la dissipassion de la chaleur generé par les solenoides, nous avons deux facons de faire :
+- de facons passive : utiliser des plaques ou radiateur en aluminium
+- de facon active :
+  - gerer le refroidissement avec des ventilateurs
+  - reduire l'alimentation de la corde avec un decoupage pwm pour juste maintenir l'etat et reduire l'amperage 
+
 
 ### les accords
 il faut placer des systemes de doigts entre les frettes qui viendrons tirer la corde vers le manche et faire l'accord voulu. 
