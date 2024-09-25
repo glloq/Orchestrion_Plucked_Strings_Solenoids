@@ -53,11 +53,10 @@ const StringConfig stringConfigs[NUM_STRINGS] = {
 };
 ```
 - midiNote : C'est la note MIDI de la corde à vide. Les valeurs choisies ici correspondent aux cordes standards d'un ukulélé soprano :
-    -     G (première corde) : 60
-    -     C (deuxième corde) : 64
-    -     E (troisième corde) : 67
-    -     A (quatrième corde) : 72
-
+   - G (première corde) : 60
+   - C (deuxième corde) : 64
+   - E (troisième corde) : 67
+   - A (quatrième corde) : 72
 - numFrets : Nombre de frettes par corde (ici 12, pour correspondre aux 12 solénoïdes par corde).
 - firstFretPin : Le numéro du premier pin du MCP23017 pour les frettes. Chaque corde a un ensemble de 12 pins, un pour chaque solénoïde qui contrôle les frettes.
 - pluckSolenoid1Pin et pluckSolenoid2Pin : Les pins des solénoïdes utilisés pour gratter la corde
