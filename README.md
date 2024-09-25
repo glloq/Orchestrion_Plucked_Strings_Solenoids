@@ -3,10 +3,13 @@
 > [!IMPORTANT]
 > le code compile et devrais fonctionner mais rien n'est testé !
 
-Le projet permet de controller un instrument à cordes grattée (guitare, basse, ukulele, etc ...) en utilisant des solenoides pour actionner les frettes et gratter les cordes.
-le code se veut adaptable pour touts les cas d'utilisations il suffira d'adapter les paramettres du fichier settings.h en fonction du branchement choisis.
+Le projet permet de controller un instrument à cordes grattée (guitare, basse, ukulele, etc ...) en utilisant des solenoides pour actionner les frettes et gratter les cordes en fonction des messages midi recu via usb.  
 
-le code est contruit autour de carte pcm23017 controlé via i2c, la partie puissance pourra etre faite avec des uln2803 (5-32v 500mA max par solenoide) ou des mofset pour les plus grosse puisssances.
+le code est construit de facon objet et se veut adaptable pour touts les cas d'utilisations il suffira d'adapter les paramettres du fichier settings.h en fonction du branchement choisis.
+
+le code de ce projet est contruit autour de carte pcm23017 controlé via i2c, la partie puissance pourra etre faite avec des uln2803 (5-32v 500mA max par solenoide) ou des mofset pour les plus grosse puisssances.
+
+<img src="https://github.com/glloq/Orchestrion_Plucked_Strings_Solenoids/blob/main/schemas.png" alt="grattage 2 solenoides" width=80% height=80%/>  
 
 
 ### les accords
