@@ -22,7 +22,7 @@ une fois le solenoide de grattage desactivé le pick vient contre la corde pour 
 le code permet de s'adapter a tout les cas d'utilisations, il suffit d'indiquer le nombre de cordes de l'instrument, le nombre de mcp utilisé et aussi le temps maximum actif d'un solenoide (afin de limiter la chauffe) 
 ```
 #define NUM_STRINGS 4         // Nombre de cordes
-#define MCP_NUMBER_USED 5      // Nombre de MCP23017 à initialiser
+#define MCP_NUMBER_USED 4      // Nombre de MCP23017 à initialiser
 #define TIME_ACTIVE_MAX 5000   // Temps actif maximum en millisecondes
 
 ```
@@ -38,4 +38,26 @@ struct StringConfig {
   uint8_t pluckSolenoid2Pin; // Pin pour le deuxième solénoïde de grattage
 };
 ```
+### Exemples  
 
+voici les paramettres a prendre pour un systeme de ukulele 4 cordes avec 12 doigts par corde.
+
+```
+#define NUM_STRINGS 4         // Nombre de cordes
+#define MCP_NUMBER_USED 4      // Nombre de MCP23017 à initialiser
+const StringConfig stringConfigs[NUM_STRINGS] = {
+  { 60, 12, 0, 50, 51 },  // Première corde (G), 12 frettes
+  { 64, 12, 12, 52, 53 }, // Deuxième corde (C), 12 frettes
+  { 67, 12, 24, 54, 55 }, // Troisième corde (E), 12 frettes
+  { 72, 12, 36, 56, 57 }  // Quatrième corde (A), 12 frettes
+};
+```
+- midiNote : C'est la note MIDI de la corde à vide. Les valeurs choisies ici correspondent aux cordes standards d'un ukulélé soprano :
+    -     G (première corde) : 60
+    -     C (deuxième corde) : 64
+    -     E (troisième corde) : 67
+    -     A (quatrième corde) : 72
+
+- numFrets : Nombre de frettes par corde (ici 12, pour correspondre aux 12 solénoïdes par corde).
+- firstFretPin : Le numéro du premier pin du MCP23017 pour les frettes. Chaque corde a un ensemble de 12 pins, un pour chaque solénoïde qui contrôle les frettes.
+- pluckSolenoid1Pin et pluckSolenoid2Pin : Les pins des solénoïdes utilisés pour gratter la corde
