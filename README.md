@@ -5,7 +5,7 @@
 
 Le projet permet de controller un instrument à cordes grattée (guitare, basse, ukulele, etc ...) en utilisant des solenoides pour actionner les frettes et gratter les cordes en fonction des messages midi recu via usb.  
 
-le code est construit de facon objet et se veut adaptable pour touts les cas d'utilisations il suffira d'adapter les paramettres du fichier settings.h en fonction du branchement choisis.
+le code est construit de facon objet et se veut adaptable pour touts les cas d'utilisations il suffira d'adapter les paramettres du fichier settings.h en fonction du branchement choisis pour l'instrument.
 
 le code de ce projet est contruit autour de carte pcm23017 controlé via i2c, la partie puissance pourra etre faite avec des uln2803 (5-32v 500mA max par solenoide) ou des mofset pour les plus grosse puisssances.
 
@@ -16,7 +16,9 @@ il faut absolument gerer la dissipassion de la chaleur generé par les solenoide
 - de facons passive : utiliser des plaques ou radiateur en aluminium
 - de facon active :
   - gerer le refroidissement avec des ventilateurs
-  - reduire l'alimentation de la corde avec un decoupage pwm pour juste maintenir l'etat et reduire l'amperage 
+  - reduire l'alimentation de la corde avec un decoupage pwm pour juste maintenir l'etat et reduire l'amperage
+ 
+le minimum est d'utiliser un systeme pour reduire le voltage de la corde après l'activation pour reduire la puissance/amperage envoyé au solenoides. => a faire !!
 
 
 ### les accords
